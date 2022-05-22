@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  Записи сообщества Лев Толстой – зеркало русской революции.
+{% endblock %} 
+{% block content %}
+{% for post in posts %}
+      <div class="container">
+        <h1>Лев Толстой – зеркало русской революции.</h1>
+        <p>
+          Группа тайных поклонников графа.
+        </p>
+        <article>
+          <ul>
+            <li>
+              Автор: {{ post.author.get_full_name }}
+            </li>
+            <li>
+              Дата публикации: {{ post.pub_date|date:"d E Y" }}
+            </li>
+          </ul>      
+          <p>
+            {{ post.text }}
+        </article>
+        <hr>
+        <article>
+          <ul>
+            <li>
+        </article>
+        <!-- под последним постом нет линии -->
+      </div> 
+  {% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+{% endblock %} 
