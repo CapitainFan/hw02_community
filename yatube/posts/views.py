@@ -3,7 +3,7 @@ from .models import Post, Group
 
 
 def index(request):
-    latest = Post.objects.all()[:10]
+    latest = Post.objects.all()
     return render(request, 'posts/index.html', {'post': latest})
 
 
