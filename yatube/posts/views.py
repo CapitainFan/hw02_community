@@ -4,7 +4,7 @@ from .models import Post, Group
 
 def index(request):
     latest = Post.objects.all()[:10]
-    return render(request, 'posts/index.html', {'post': latest})
+    return render(request, 'posts/index.html', {'posts': latest})
 
 
 def group_posts(request, slug):
