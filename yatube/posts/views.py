@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'posts/index.html', {'post': latest})
 
 
-def group_posts(request, slug):
+def group_list(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group)[:10]
     return render(request, 'posts/group_list.html',
