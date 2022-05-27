@@ -18,7 +18,7 @@
           <p>
           {{ post.text }}  
           </p>
-          {%if post.group.slug is not None %}
+          {%if post.group.slug%}
            <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
           {%endif%}
   {% if not forloop.last %}<hr>{% endif %}
