@@ -1,4 +1,3 @@
-from readline import append_history_file
 from django.urls import path
 from . import views
 
