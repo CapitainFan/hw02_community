@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block title %} Записи сообщества {{ group }} {% endblock %}
-
 {% block content %}
   <h1>{{ group.description }}</h1>
   <p>{{ group.title }}</p>
@@ -20,7 +19,4 @@
     {% if not forloop.last %}<hr>{% endif %}
   </article>
   {% endfor %}
-
-  {% include 'posts/includes/paginator.html' %}
-  
 {% endblock %}
