@@ -18,8 +18,8 @@ class Post(models.Model):
         ordering = ['-pub_date']
     name = models.CharField(max_length=200, default='unknown')
     text = models.TextField()
-    pub_date = models.DateTimeField("date published", auto_now_add=True)
+    pub_date = models.DateTimeField('date published', auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
-                               related_name="posts")
+                               related_name='posts')
     group = models.ForeignKey(Group, on_delete=models.SET_NULL,
-                              related_name="posts", blank=True, null=True)
+                              related_name='posts', blank=True, null=True)
