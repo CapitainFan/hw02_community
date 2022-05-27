@@ -4,10 +4,10 @@ from .models import Post, Group
 
 def index(request):
     latest = Post.objects.all()[:10]
-    return render(request, 'index.html', {'posts': latest})
+    return render(request, 'posts/index.html', {'post': latest})
 
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.filter(group=group)[:12]
-    return render(request, "group.html", {"group": group, "posts": posts})
+    return render(request, "group.html", {"group": group, "post": posts})
