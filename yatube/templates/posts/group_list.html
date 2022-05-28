@@ -16,7 +16,7 @@
             Дата публикации: {{ post.pub_date|date:"d E Y" }}
         </li>
     </ul>
-    <p>{{ posts.text }}</p>
+    <p>{{ models/post.text }}</p>
     {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
 {% endblock %}
