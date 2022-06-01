@@ -101,8 +101,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
+LOGIN_URL = 'users:login'
+
+LOGIN_REDIRECT_URL = 'posts:index'
 
 LANGUAGE_CODE = "ru"
 
